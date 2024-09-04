@@ -1,4 +1,6 @@
-import './App.css';
+import './css/App.css';
+import photo from './img/Photo.JPG';
+import gitLogo from './img/github-mark.svg';
 
 /**
  * ポートフォリオを作成します。
@@ -10,17 +12,17 @@ function App() {
       {/* ヘッダー目次 */}
       {Header()}
 
+      {/* このサイトについて */}
+      {ThisSite()}
+
       {/* 経歴 */}
-      {About()}
+      {AboutMe()}
 
       {/* 経歴 */}
       {Skill()}
 
       {/* <!-- プロジェクトセクション --> */}
       {Project()}
-
-      {/* <!-- 経歴セクション --> */}
-      {Experience()}
 
       {/* 連絡先セクション */}
       {Contact()}
@@ -39,14 +41,29 @@ function Header() {
     <header>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#Profile">Profile</a></li>
+          <li><a href="#Skills">Skills</a></li>
+          <li><a href="#Projects">Projects</a></li>
+          <li><a href="#Contact">Contact</a></li>
         </ul>
       </nav>
     </header>
+  );
+}
+
+function ThisSite() {
+  return (
+    <section class="section">
+      <h1>このサイトについて</h1>
+      <p>
+        このサイトでは、私のこれまでの経歴・業務・スキルをまとめております。<br></br>
+        私のスキルレベルや人となりが少しでも伝わればと思い作成いたしました。<br></br>
+        GitHubにソースをアップしておりますので、必要に応じてご覧ください。
+      </p>
+      <a href="https://github.com/shouzou-nozaki/portfolio" target="_blank" rel="noopener noreferrer">
+        <img src={gitLogo} class="gitLogo" alt="gitLogo" title="GitHubへ移動" />
+      </a>
+    </section>
   );
 }
 
@@ -54,12 +71,38 @@ function Header() {
  * サマリーフォームを作成します。
  * @returns 
  */
-function About() {
+function AboutMe() {
   return (
-    <section id="about" class="section">
-      <h1>経歴</h1>
-      <p>システムエンジニアとして3年実務経験を積んできました。開発手法としてはウォーターフォール、スクラム(SAFe)どちらも経験しております。
-      </p>
+    <section id="Profile" class="section">
+      <h1 class="title">Profile</h1>
+      <div class="introduce">
+        <img src={photo} alt="Photo" />
+        　はじめまして、野崎章三と申します。エンジニア歴は今年で３年目を迎えています。<br></br>
+        これまでは業務委託として、複数のプロジェクトでチームと協力しシステム開発を行ってきました。<br></br>
+        ウォータフォール型、アジャイル型での開発を経験しており、またシステム設計に携わった経験もあります。<br></br>
+        <br></br>
+      
+        　私は、これまでの３年間だけでもシステムエンジニアという職業を天職だと感じています。<br></br>
+        そのため、今後も技術・知識ともに磨きながら、より多くの場面で活躍していきたいと考えています。<br></br>
+        今回はそんな私、野崎章三について知っていただければと思っています。
+        <br></br>
+      </div>
+      <div class="introduce">
+        <p class="text">
+          <h2 class="title">経歴</h2>
+          <ul>
+            <li>【2016.04】  福井県立武生東高校 普通科 入学</li>
+            <br></br>
+            <li>【2019.04】  国立大学法人福井大学 工学部 電気電子情報工学科 入学</li>
+            <br></br>
+            <li>【2021.10】  国立大学法人福井大学 工学部 電気電子情報工学科 中途退学</li>
+            <br></br>
+            <li>【2021.12】  株式会社アートプロデザインワークス 入社</li>
+            <br></br>
+            <li>【2024.9】 To Be Continue...</li>
+          </ul>
+        </p>
+      </div>
     </section>
   );
 }
@@ -70,11 +113,12 @@ function About() {
  */
 function Skill() {
   return (
-    <section class="section">
+    <section class="section" id="Skills">
       <div class="inner">
         <div class="section-title-block">
-          <h2 class="section-title"><i class="fas fa-lightbulb fa-lg"><span class="section-title-css">SKILL</span></i>
+          <h2 class="title"><i class="fas fa-lightbulb fa-lg"><span class="section-title-css">Skills</span></i>
           </h2>
+          {/* ここに業務経験あり or なし　のルールを記載(色)する */}
           <p class="section-desc"></p>
         </div>
         <div class="card-wrapper">
@@ -112,7 +156,7 @@ function Skill() {
 
               <div class="skill-desc">
                 <h3 class="skill-desc-title"><i class="fas fa-desktop"></i>フロントエンド</h3>
-                <p>直近ではAngularJSを使用して開発していました。</p>
+                <p>直近ではAngularを使用して開発していました。</p>
                 <table class="table table-borderless">
                   <thead>
                     <tr>
@@ -303,8 +347,8 @@ function Skill() {
  */
 function Project() {
   return (
-    <section id="projects" class="section">
-      <h2>Projects</h2>
+    <section id="Projects" class="section">
+      <h2 class="title">Projects</h2>
       <div class="project">
         <h3>Project A</h3>
         <p>プロジェクトAの概要をここに記載します。</p>
@@ -321,39 +365,22 @@ function Project() {
 }
 
 /**
- * 経歴フォームを作成します。
- * @returns 
- */
-function Experience() {
-  return (
-    <section id="experience" class="section">
-      <h2>Experience</h2>
-      <div class="experience-item">
-        <h3>自動車部品製造会社 J社(2022/9 ～ 2024/6)</h3>
-        <p>システムの設計から開発までを主に担当しました。</p>
-      </div>
-      <div class="experience-item">
-        <h3>自動車製造会社 T社(2024/7 ～ 2025/9)</h3>
-        <p>システムの開発を主に担当しました。</p>
-      </div>
-    </section>
-  );
-}
-
-/**
  * 連絡先フォームを作成します。
  * @returns 
  */
 function Contact() {
 
   return (
-    <section id="contact" class="section">
+    <section id="Contact" class="section">
       <h2>Contact</h2>
-      <form>
-        <label for="name">Name:野崎章三</label>
-
-        <label for="email">Email:soro0530@icloud.com</label>
-
+      <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Comment:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
       </form>
     </section>
   );

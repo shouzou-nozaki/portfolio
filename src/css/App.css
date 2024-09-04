@@ -1,3 +1,20 @@
+
+/* ヘッダー設定 */
+header {
+  font-size: 2.5em;
+  width: 100%; /* 幅いっぱいを指定 */
+  height: 8%; /* 高さを50pxに指定 */
+  background: #4169e1; /* 背景色にグレーを指定 */
+  padding: 10px 0; /* ヘッダーに上下左右それぞれ余白を指定 */
+  box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+  position: fixed; /* ウィンドウを基準に画面に固定 */
+  top: 0; /* 上下の固定位置を上から0pxにする */
+  left: 0; /* 左右の固定位置を左から0pxにする */
+  align-items: center; /* 中の要素を上下中央に並べる */
+  font-size: 30px;
+}
+
+/* ボディ設定 */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f0f8ff;
@@ -5,32 +22,34 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  font-size: 20px;
+  text-align: center;
 }
 
-header {
-  background-color: #4169e1;
-  color: #ffffff;
-  padding: 10px 0;
-}
 
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  padding: auto;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
   color: #ffffff;
-  text-decoration: none;
   font-weight: bold;
 }
 
+/* 画像設定 */
+img {
+  margin:auto;
+}
+
+/* 共通　セクション設定 */
 .section {
   padding: 40px;
   text-align: center;
@@ -40,18 +59,51 @@ nav ul li a {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#about h1 {
+.section .title{
   font-size: 2.5em;
   margin-bottom: 10px;
   color: #4169e1;
 }
 
-#skills ul {
+.section .text{
+  text-align: left;
+  padding: 10;
+  margin: 20px 0 0;
+}
+
+/* 自己紹介設定 */
+.introduce{
+  margin: auto;
+  padding: 10;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.introduce img{
+  margin-right: 2%;
+}
+
+.introduce .title{
+  text-align: center;
+  color:black;
+  font-size: 1.5em;
+  margin: auto;
+  text-decoration: underline;
+}
+
+.introduce ul{
+  list-style: none;
+}
+
+/*  */
+#Skills ul {
   list-style: none;
   padding: 0;
 }
 
-#skills ul li {
+#Skills ul li {
   background: #e0ebf5;
   margin: 10px 0;
   padding: 10px;
@@ -68,19 +120,19 @@ nav ul li a {
   color: #7f8c8d;
 }
 
-#contact form {
+#Contact form {
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
 }
 
-#contact label {
+#Contact label {
   display: block;
   margin: 10px 0 5px;
   color: #7f8c8d;
 }
 
-#contact input, #contact textarea {
+#Contact input, #Contact textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
