@@ -71,7 +71,7 @@ img {
   margin: 20px 0 0;
 }
 
-/* 自己紹介設定 */
+/* プロフィール設定 */
 .introduce{
   margin: auto;
   padding: 10;
@@ -88,7 +88,7 @@ img {
 .introduce .title{
   text-align: center;
   color:black;
-  font-size: 1.5em;
+  font-size: 30px;
   margin: auto;
   text-decoration: underline;
 }
@@ -97,13 +97,52 @@ img {
   list-style: none;
 }
 
-/*  */
-#Skills ul {
+/* スキル設定 */
+.skill .title{
+  text-align: center;
+  color:black;
+  font-size: 30px;
+  margin: auto;
+  text-decoration: underline;
+}
+
+.section .usecase{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.section .work{
+color:blue;
+margin-right: 10px;
+}
+
+.section .personal{
+  color:greenyellow;
+  margin-right: 10px;
+}
+
+.skill table{
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 40%;
+  table-layout: fixed;
+}
+
+tr .left{
+  float: left;
+  margin-left: 20px;
+}
+
+#skill ul {
   list-style: none;
   padding: 0;
 }
 
-#Skills ul li {
+#skill ul li {
   background: #e0ebf5;
   margin: 10px 0;
   padding: 10px;
@@ -117,7 +156,7 @@ img {
   margin: 20px 0;
   border-radius: 5px;
   text-align: left;
-  color: #7f8c8d;
+  /* color: #7f8c8d; */
 }
 
 #Contact form {

@@ -1,6 +1,9 @@
 import './css/App.css';
-import photo from './img/Photo.JPG';
+import photo from './img/photo.JPG';
 import gitLogo from './img/github-mark.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// 必要なアイコンをインポート
+import { faLaptop, faCode, faGear, faDatabase, faToolbox, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * ポートフォリオを作成します。
@@ -24,14 +27,9 @@ function App() {
       {/* <!-- プロジェクトセクション --> */}
       {Project()}
 
-      {/* 連絡先セクション */}
-      {Contact()}
-
     </div>
   );
 }
-
-
 
 /**
  * ヘッダーを作成します。
@@ -60,7 +58,7 @@ function ThisSite() {
         私のスキルレベルや人となりが少しでも伝わればと思い作成いたしました。<br></br>
         GitHubにソースをアップしておりますので、必要に応じてご覧ください。
       </p>
-      <a href="https://github.com/shouzou-nozaki/portfolio" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/shouzou-nozaki/portfolio" target="_blank">
         <img src={gitLogo} class="gitLogo" alt="gitLogo" title="GitHubへ移動" />
       </a>
     </section>
@@ -77,12 +75,12 @@ function AboutMe() {
       <h1 class="title">Profile</h1>
       <div class="introduce">
         <img src={photo} alt="Photo" />
-        　はじめまして、野崎章三と申します。エンジニア歴は今年で３年目を迎えています。<br></br>
+        はじめまして、野崎章三と申します。エンジニア歴は今年で３年目を迎えています。<br></br>
         これまでは業務委託として、複数のプロジェクトでチームと協力しシステム開発を行ってきました。<br></br>
         ウォータフォール型、アジャイル型での開発を経験しており、またシステム設計に携わった経験もあります。<br></br>
         <br></br>
-      
-        　私は、これまでの３年間だけでもシステムエンジニアという職業を天職だと感じています。<br></br>
+
+        私は、これまでの３年間だけでもシステムエンジニアという職業を天職だと感じています。<br></br>
         そのため、今後も技術・知識ともに磨きながら、より多くの場面で活躍していきたいと考えています。<br></br>
         今回はそんな私、野崎章三について知っていただければと思っています。
         <br></br>
@@ -99,7 +97,7 @@ function AboutMe() {
             <br></br>
             <li>【2021.12】  株式会社アートプロデザインワークス 入社</li>
             <br></br>
-            <li>【2024.9】 To Be Continue...</li>
+            <li>【2024.9】 To Be Continued...</li>
           </ul>
         </p>
       </div>
@@ -114,229 +112,196 @@ function AboutMe() {
 function Skill() {
   return (
     <section class="section" id="Skills">
-      <div class="inner">
-        <div class="section-title-block">
-          <h2 class="title"><i class="fas fa-lightbulb fa-lg"><span class="section-title-css">Skills</span></i>
-          </h2>
-          {/* ここに業務経験あり or なし　のルールを記載(色)する */}
-          <p class="section-desc"></p>
-        </div>
-        <div class="card-wrapper">
-          <div class="card">
-            <div class="skill-desc">
-              <h3 class="skill-desc-title"><i class="fas fa-desktop"></i>デザイン・コーディング</h3>
-              <p>基本的な事は一通りできます。CSSフレームワークはbootstrap使いました。</p>
-              <table class="table table-borderless">
-                <thead>
-                  <tr>
-                    <th scope="col">技術</th>
-                    <th scope="col">経験年数</th>
-                    <th scope="col">スキル</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">HTML5</th>
-                    <td>1年</td>
-                    <td><span class="rating">
-                      <p class="rate rate4"></p>
-                    </span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">CSS3</th>
-                    <td>1年</td>
-                    <td><span class="rating">
-                      <p class="rate rate4"></p>
-                    </span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="card">
-
-              <div class="skill-desc">
-                <h3 class="skill-desc-title"><i class="fas fa-desktop"></i>フロントエンド</h3>
-                <p>直近ではAngularを使用して開発していました。</p>
-                <table class="table table-borderless">
-                  <thead>
-                    <tr>
-                      <th scope="col">技術</th>
-                      <th scope="col">経験年数</th>
-                      <th scope="col">スキル</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">JavaScrpt</th>
-                      <td>2年</td>
-                      <td><span class="rating">
-                        <p class="rate rate5"></p>
-                      </span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">TypeScript</th>
-                      <td>1年</td>
-                      <td><span class="rating">
-                        <p class="rate rate4"></p>
-                      </span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Angular</th>
-                      <td>1年</td>
-                      <td><span class="rating">
-                        <p class="rate rate4"></p>
-                      </span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Ruby</th>
-                      <td>1年</td>
-                      <td><span class="rating">
-                        <p class="rate rate4"></p>
-                      </span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="card">
-                <div class="skill-desc">
-                  <h3 class="skill-desc-title"><i class="fas fa-desktop"></i>バックエンド</h3>
-                  <p>直近ではjavaを使用した開発を行いました。</p>
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">技術</th>
-                        <th scope="col">経験年数</th>
-                        <th scope="col">スキル</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">VB.NET</th>
-                        <td>1年</td>
-                        <td><span class="rating">
-                          <p class="rate rate4"></p>
-                        </span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">C#</th>
-                        <td>1年</td>
-                        <td><span class="rating">
-                          <p class="rate rate5"></p>
-                        </span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Java</th>
-                        <td>1年</td>
-                        <td><span class="rating">
-                          <p class="rate rate5"></p>
-                        </span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="skill-desc">
-                  <h3 class="skill-desc-title"><i class="fas fa-database"></i>DB</h3>
-                  <p>直近ではOracleを使用しました。</p>
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">技術</th>
-                        <th scope="col">経験年数</th>
-                        <th scope="col">スキル</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">SQLSERVER</th>
-                        <td>1年</td>
-                        <td><span class="rating">
-                          <p class="rate rate4"></p>
-                        </span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Oracle</th>
-                        <td>1年</td>
-                        <td><span class="rating">
-                          <p class="rate rate4"></p>
-                        </span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">PostgreSQL</th>
-                        <td>数か月</td>
-                        <td><span class="rating">
-                          <p class="rate rate4"></p>
-                        </span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="skill-desc">
-                  <h3 class="skill-desc-title"><i class="fas fa-toolbox"></i>その他</h3>
-                  <p>開発等で使用したツールやFWです。</p>
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">技術</th>
-                        <th scope="col">経験年数</th>
-                        <th scope="col">スキル</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <th scope="row">Git</th>
-                      <td>2年</td>
-                      <td><span class="rating">
-                        <p class="rate rate4"></p>
-                      </span></td>
-                      <tr></tr>
-                      <tr>
-                        <th scope="row">Microsoft Teams</th>
-                        <td>2年</td>
-                        <td><span class="rating">
-                          <p class="rate rate2"></p>
-                        </span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Monday</th>
-                        <td>1年</td>
-                        <td><span class="rating">
-                          <p class="rate rate2"></p>
-                        </span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="skill-desc">
-                  <h3 class="skill-desc-title"><i class="fas fa-list-alt"></i>保有資格</h3>
-                  <p>社会人になってから取得したものです。</p>
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">資格</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">基本情報技術者</th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-            </div>
-          </div>
+      <h1 class="title">Skills</h1>
+      <div class="usecase">
+        業務使用：<a class="work">●</a>
+        個人使用：<a class="personal">●</a>
+      </div>
+      <div class="skill">
+        <h2 class="title">
+          <FontAwesomeIcon icon={faCode} />デザイン・コーディング
+        </h2>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">技術</th>
+                <th scope="col">経験年数</th>
+                <th scope="col">スキル</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="left"><a class="work">●</a>HTML5</td>
+                <td>1年</td>
+                <td>★★★☆☆</td>
+              </tr>
+              <tr>
+                <td class="left"><a class="work">●</a>CSS3</td>
+                <td>1年</td>
+                <td>★★★☆☆</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+
+      <div class="skill">
+        <h2 class="title">
+          <FontAwesomeIcon icon={faLaptop} />フロントエンド
+        </h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">技術</th>
+              <th scope="col">経験年数</th>
+              <th scope="col">スキル</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><a class="work">●</a>TypeScript</td>
+              <td>1年</td>
+              <td>★★☆☆☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="work">●</a>Angular</td>
+              <td>1年</td>
+              <td>★★☆☆☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="personal">●</a>React</td>
+              <td>数か月</td>
+              <td>★☆☆☆☆</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="skill">
+        <h2 class="title">
+          <FontAwesomeIcon icon={faGear} />バックエンド
+        </h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">技術</th>
+              <th scope="col">経験年数</th>
+              <th scope="col">スキル</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><a class="work">●</a>VB.NET</td>
+              <td>数か月</td>
+              <td>★★★☆☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="work">●</a>C#</td>
+              <td>1年</td>
+              <td>★★★☆☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="work">●</a>Java</td>
+              <td>1年</td>
+              <td>★★☆☆☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="personal">●</a>Ruby</td>
+              <td>1年</td>
+              <td>★☆☆☆☆</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="skill">
+        <h2 class="title">
+          <FontAwesomeIcon icon={faDatabase} />DB
+        </h2>
+        <table>
+          <thead>
+            <tr>
+              <th>技術</th>
+              <th>経験年数</th>
+              <th>スキル</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><a class="work">●</a>SQLServer</td>
+              <td>1年</td>
+              <td>★★★☆☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="work">●</a>Oracle</td>
+              <td>1年</td>
+              <td>★★★☆☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="personal">●</a>MySQL</td>
+              <td>1年</td>
+              <td>★★☆☆☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="personal">●</a>PostgreSQL</td>
+              <td>1年</td>
+              <td>★☆☆☆☆</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="skill">
+        <h2 class="title">
+          <FontAwesomeIcon icon={faToolbox} />ツール
+        </h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">技術</th>
+              <th scope="col">経験年数</th>
+              <th scope="col">スキル</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left"><a class="work">●</a>Git</td>
+              <td>1年</td>
+              <td>★★★★☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="work">●</a>VSCODE</td>
+              <td>1年</td>
+              <td>★★★★☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="work">●</a>VisualStudioCode</td>
+              <td>1年</td>
+              <td>★★★★☆</td>
+            </tr>
+            <tr>
+              <td class="left"><a class="work">●</a>Eclipse</td>
+              <td>1年</td>
+              <td>★★☆☆☆</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="skill">
+        <h2 class="title">
+          <FontAwesomeIcon icon={faGraduationCap} />保有資格
+        </h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>基本情報技術者試験</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </section>
   );
 }
@@ -350,41 +315,53 @@ function Project() {
     <section id="Projects" class="section">
       <h2 class="title">Projects</h2>
       <div class="project">
-        <h3>Project A</h3>
-        <p>プロジェクトAの概要をここに記載します。</p>
+        <h3>【2021.5 - 2021.8】販売管理システム改修</h3>
+        <p>製造業</p>
+        <p>自社顧客企業に導入している販売管理システムの機能改修を行いました。</p>
         <a href="#" target="_blank">詳細を見る</a>
       </div>
       <div class="project">
-        <h3>Project B</h3>
-        <p>プロジェクトBの概要をここに記載します。</p>
+        <h3>【2021.9 - 2021.12】支払管理WEBシステム機能追加</h3>
+        <p>観光業</p>
+        <p>自社顧客企業に導入している支払管理WEBシステムの機能追加を行いました。</p>
         <a href="#" target="_blank">詳細を見る</a>
       </div>
-      {/* <!-- 他のプロジェクトも追加可能 --> */}
+      <div class="project">
+        <h3>【2022.1 - 2022.4】人事管理システム改修</h3>
+        <p>製造業</p>
+        <p>自社顧客企業に導入している支払管理WEBシステムの機能改修を行いました。</p>
+        <a href="#" target="_blank">詳細を見る</a>
+      </div>
+      <div class="project">
+        <h3>【2022.5 - 2022.8】生産管理システム機能追加</h3>
+        <p>建築業</p>
+        <p>自社顧客企業に導入しているシステムの機能追加を行いました。</p>
+        <a href="#" target="_blank">詳細を見る</a>
+      </div>
+      <div class="project">
+        <h3>【2022.9 - 2023.11】脱ホストPJ連携基盤再構築</h3>
+        <p>基幹システム改修に伴う影響を調査し、影響が出る箇所の改修を主に行いました。</p>
+        <a href="#" target="_blank">詳細を見る</a>
+      </div>
+      <div class="project">
+        <h3>【2023.12 - 2024.6】ホスト連動メール配信システム</h3>
+        <p>自動車製造業J社</p>
+        <p>既存ホスト連携メール送信システムで使用していた、サーバーOSの老朽化によるマイグレーションを行いました。</p>
+        <a href="#" target="_blank">詳細を見る</a>
+      </div>
+      <div class="project">
+        <h3>【2024.7 - 2025.4】車両仕様一気通貫システム</h3>
+        <p>自動車製造業T社</p>
+        <p>自動車製造業T社の社内システム開発を行いました。</p>
+        <a href="#" target="_blank">詳細を見る</a>
+      </div>
+      <div class="project">
+        <h3>読書ノートアプリケーション</h3>
+        <p>趣味で作成している読書ノートを、WEB上で作成できるようなアプリケーションを作成しました。</p>
+        <a href="#" target="_blank">詳細を見る</a>
+      </div>
     </section>
   );
-}
-
-/**
- * 連絡先フォームを作成します。
- * @returns 
- */
-function Contact() {
-
-  return (
-    <section id="Contact" class="section">
-      <h2>Contact</h2>
-      <form action="#" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-        <label for="message">Comment:</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  );
-
 }
 
 export default App;
